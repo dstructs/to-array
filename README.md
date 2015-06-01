@@ -22,8 +22,20 @@ var toArray = require( 'compute-to-array' );
 
 #### toArray( mat )
 
-What does this function do?
+This function takes an input [matrix](https://github.com/compute-io/matrix) `mat` and turns it into an array of arrays.
 
+``` javascript
+// create 2 x 2 matrix, values initialized to be zero
+var mat = matrix( [ 2, 2 ] );
+
+var arr = toArray( mat )
+/*
+	[
+		[ 0, 0 ],
+		[ 0, 0 ]
+	]
+*/
+```
 
 ## Examples
 
@@ -33,6 +45,12 @@ var matrix = require( 'compute-matrix' );
 
 var mat = matrix( new Int32Array( [ 1, 2, 3, 4 ] ), [ 2, 2 ] );
 console.log( toArray(mat) );
+/*
+	[
+		[ 1, 2 ],
+		[ 3, 4 ]
+	]
+*/
 ```
 
 To run the example code from the top-level application directory,
