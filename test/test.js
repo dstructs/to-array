@@ -3,11 +3,13 @@
 
 // MODULES //
 
+var matrix = require( 'compute-matrix' );
+
 var // Expectation library:
 	chai = require( 'chai' ),
 
 	// Module to be tested:
-	lib = require( './../lib' );
+	toArray = require( './../lib' );
 
 
 // VARIABLES //
@@ -21,7 +23,7 @@ var expect = chai.expect,
 describe( 'compute-to-array', function tests() {
 
 	it( 'should export a function', function test() {
-		expect( lib ).to.be.a( 'function' );
+		expect( toArray ).to.be.a( 'function' );
 	});
 
 	it( 'should do something' );

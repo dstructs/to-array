@@ -2,7 +2,7 @@ to-array
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Construct an array-of-arrays from a matrix.
+> Construct an array of arrays from a matrix.
 
 
 ## Installation
@@ -17,10 +17,10 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var foo = require( 'compute-to-array' );
+var toArray = require( 'compute-to-array' );
 ```
 
-#### foo( arr )
+#### toArray( mat )
 
 What does this function do?
 
@@ -28,7 +28,11 @@ What does this function do?
 ## Examples
 
 ``` javascript
-var foo = require( 'compute-to-array' );
+var toArray = require( 'compute-to-array' );
+var matrix = require( 'compute-matrix' );
+
+var mat = matrix( new Int32Array( [ 1, 2, 3, 4 ] ), [ 2, 2 ] );
+console.log( toArray(mat) );
 ```
 
 To run the example code from the top-level application directory,
