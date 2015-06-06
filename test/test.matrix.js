@@ -10,7 +10,7 @@ var // Expectation library:
 	matrix = require( 'dstructs-matrix' ),
 
 	// Module to be tested:
-	toArray = require( './../lib' );
+	toArray = require( './../lib/matrix.js' );
 
 
 // VARIABLES //
@@ -27,29 +27,6 @@ describe( 'compute-to-array', function tests() {
 		expect( toArray ).to.be.a( 'function' );
 	});
 
-	it( 'should throw an error if provided input which is not a matrix', function test() {
-		var values = [
-			'5',
-			5,
-			true,
-			undefined,
-			null,
-			NaN,
-			[],
-			{},
-			function(){}
-		];
-
-		for ( var i = 0; i < values.length; i++ ) {
-			expect( badValue( values[ i ] ) ).to.throw( TypeError );
-		}
-		function badValue( value ) {
-			return function() {
-				toArray( value );
-			};
-		}
-	});
-
 	it( 'should construct an array of arrays from a matrix', function test() {
 		var nRows,
 			nCols,
@@ -58,7 +35,7 @@ describe( 'compute-to-array', function tests() {
 			arr,
 			i, j;
 
-		data = new Float64Array( [ 2, 4, 3, 1, 1, 2, 2, 1, 7, 3, 9, 7, 11, 9, 9, 8] );
+		data = new Float64Array( [ 2, 4, 3, 1, 1, 2, 2, 1, 7, 3, 9, 7, 11, 9, 9, 8 ] );
 
 		nRows = 4;
 		nCols = 4;
@@ -71,6 +48,20 @@ describe( 'compute-to-array', function tests() {
 				assert.strictEqual( mat.get( i, j ), arr[ i ][ j ] );
 			}
 		}
+	});
+
+	it( 'should return an empty array if provided an empty matrix', function test() {
+		var arr = [],
+			mat;
+
+		mat = matrix( [0,0] );
+		assert.deepEqual( toArray( mat ), arr );
+
+		mat = matrix( [0,10] );
+		assert.deepEqual( toArray( mat ), arr );
+
+		mat = matrix( [10,0] );
+		assert.deepEqual( toArray( mat ), arr );
 	});
 
 });

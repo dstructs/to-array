@@ -2,7 +2,7 @@ to-array
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Construct an array of arrays from a matrix.
+> Construct an array of arrays.
 
 
 ## Installation
@@ -20,37 +20,49 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 var toArray = require( 'compute-to-array' );
 ```
 
-#### toArray( mat )
+#### toArray( x )
 
-This function takes an input [matrix](https://github.com/compute-io/matrix) `mat` and turns it into an array of arrays.
+Constructs an `array` of `arrays`. To convert a [matrix](https://github.com/dstructs/matrix),
 
 ``` javascript
-// create 2 x 2 matrix, values initialized to be zero
 var mat = matrix( [ 2, 2 ] );
 
 var arr = toArray( mat )
-/*
-	[
-		[ 0, 0 ],
-		[ 0, 0 ]
-	]
-*/
+// returns [ [ 0, 0 ], [ 0, 0 ] ]
 ```
+
+If provided an empty [matrix](https://github.com/dstructs/matrix), the function returns an empty `array`.
+
+``` javascript
+var mat, arr;
+
+mat = matrix( [0,0] );
+arr = toArray( mat );
+// returns []
+
+mat = matrix( [0,10] );
+arr = toArray( mat );
+// returns []
+
+mat = matrix( [10,0] );
+arr = toArray( mat );
+// returns []
+```
+
 
 ## Examples
 
 ``` javascript
-var toArray = require( 'compute-to-array' );
-var matrix = require( 'compute-matrix' );
+var toArray = require( 'compute-to-array' ),
+	matrix = require( 'dstructs-matrix' );
 
-var mat = matrix( new Int32Array( [ 1, 2, 3, 4 ] ), [ 2, 2 ] );
-console.log( toArray(mat) );
-/*
-	[
-		[ 1, 2 ],
-		[ 3, 4 ]
-	]
-*/
+var data, mat;
+
+data = new Int32Array( [ 1, 2, 3, 4 ] );
+mat = matrix( data, [ 2, 2 ] );
+
+console.log( toArray( mat ) );
+// returns [ [ 1, 2 ], [ 3, 4 ] ]
 ```
 
 To run the example code from the top-level application directory,
@@ -96,7 +108,7 @@ $ make view-cov
 
 ## Copyright
 
-Copyright &copy; 2015. The Compute.io Authors.
+Copyright &copy; 2015. The [Compute.io](https://github.com/compute-io) Authors.
 
 
 [npm-image]: http://img.shields.io/npm/v/compute-to-array.svg

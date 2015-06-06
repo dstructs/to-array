@@ -1,7 +1,12 @@
 'use strict';
 
-var toArray = require( './../lib' );
-var matrix = require( 'compute-matrix' );
+var matrix = require( 'dstructs-matrix' ),
+	toArray = require( './../lib' );
 
-var mat = matrix( new Int32Array( [ 1, 2, 3, 4 ] ), [ 2, 2 ] );
-console.log( toArray(mat) );
+var data, mat;
+
+data = new Int32Array( [ 1, 2, 3, 4 ] );
+mat = matrix( data, [ 2, 2 ] );
+
+console.log( toArray( mat ) );
+// returns [ [ 1, 2 ], [ 3, 4 ] ]
