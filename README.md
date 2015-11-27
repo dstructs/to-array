@@ -22,7 +22,7 @@ var toArray = require( 'compute-to-array' );
 
 #### toArray( x )
 
-Constructs an `array` of `arrays`. To convert a [matrix](https://github.com/dstructs/matrix),
+Constructs an `array` of `arrays`. To convert a [matrix][matrix],
 
 ``` javascript
 var mat = matrix( [ 2, 2 ] );
@@ -31,7 +31,7 @@ var arr = toArray( mat )
 // returns [ [ 0, 0 ], [ 0, 0 ] ]
 ```
 
-If provided an empty [matrix](https://github.com/dstructs/matrix), the function returns an empty `array`.
+If provided an empty [matrix][matrix], the function returns an empty `array`.
 
 ``` javascript
 var mat, arr;
@@ -76,7 +76,7 @@ $ node ./examples/index.js
 
 ### Unit
 
-Unit tests use the [Mocha](http://mochajs.org/) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
+Unit tests use the [Mocha][mocha] test framework with [Chai][chai] assertions. To run the tests, execute the following command in the top-level application directory:
 
 ``` bash
 $ make test
@@ -87,7 +87,7 @@ All new feature development should have corresponding unit tests to validate cor
 
 ### Test Coverage
 
-This repository uses [Istanbul](https://github.com/gotwarlost/istanbul) as its code coverage tool. To generate a test coverage report, execute the following command in the top-level application directory:
+This repository uses [Istanbul][istanbul] as its code coverage tool. To generate a test coverage report, execute the following command in the top-level application directory:
 
 ``` bash
 $ make test-cov
@@ -114,17 +114,23 @@ Copyright &copy; 2015. The [Compute.io](https://github.com/compute-io) Authors.
 [npm-image]: http://img.shields.io/npm/v/compute-to-array.svg
 [npm-url]: https://npmjs.org/package/compute-to-array
 
-[travis-image]: http://img.shields.io/travis/compute-io/to-array/master.svg
-[travis-url]: https://travis-ci.org/compute-io/to-array
+[travis-image]: http://img.shields.io/travis/dstructs/to-array/master.svg
+[travis-url]: https://travis-ci.org/dstructs/to-array
 
-[coveralls-image]: https://img.shields.io/coveralls/compute-io/to-array/master.svg
-[coveralls-url]: https://coveralls.io/r/compute-io/to-array?branch=master
+[codecov-image]: https://img.shields.io/codecov/c/github/dstructs/to-array/master.svg
+[codecov-url]: https://codecov.io/github/dstructs/to-array?branch=master
 
-[dependencies-image]: http://img.shields.io/david/compute-io/to-array.svg
-[dependencies-url]: https://david-dm.org/compute-io/to-array
+[dependencies-image]: http://img.shields.io/david/dstructs/to-array.svg
+[dependencies-url]: https://david-dm.org/dstructs/to-array
 
-[dev-dependencies-image]: http://img.shields.io/david/dev/compute-io/to-array.svg
-[dev-dependencies-url]: https://david-dm.org/dev/compute-io/to-array
+[dev-dependencies-image]: http://img.shields.io/david/dev/dstructs/to-array.svg
+[dev-dependencies-url]: https://david-dm.org/dev/dstructs/to-array
 
-[github-issues-image]: http://img.shields.io/github/issues/compute-io/to-array.svg
-[github-issues-url]: https://github.com/compute-io/to-array/issues
+[github-issues-image]: http://img.shields.io/github/issues/dstructs/to-array.svg
+[github-issues-url]: https://github.com/dstructs/to-array/issues
+
+[mocha]: http://mochajs.org/
+[chai]: http://chaijs.com
+[istanbul]: https://github.com/gotwarlost/istanbul
+
+[matrix]: https://github.com/dstructs/matrix
