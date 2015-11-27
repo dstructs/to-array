@@ -8,7 +8,7 @@ to-array
 ## Installation
 
 ``` bash
-$ npm install compute-to-array
+$ npm install dstructs-to-array
 ```
 
 For use in the browser, use [browserify](https://github.com/substack/node-browserify).
@@ -17,7 +17,7 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var toArray = require( 'compute-to-array' );
+var toArray = require( 'dstructs-to-array' );
 ```
 
 #### toArray( x )
@@ -53,7 +53,7 @@ arr = toArray( mat );
 ## Examples
 
 ``` javascript
-var toArray = require( 'compute-to-array' ),
+var toArray = require( 'dstructs-to-array' ),
 	matrix = require( 'dstructs-matrix' );
 
 var data, mat;
@@ -111,8 +111,8 @@ $ make view-cov
 Copyright &copy; 2015. The [Compute.io](https://github.com/compute-io) Authors.
 
 
-[npm-image]: http://img.shields.io/npm/v/compute-to-array.svg
-[npm-url]: https://npmjs.org/package/compute-to-array
+[npm-image]: http://img.shields.io/npm/v/dstructs-to-array.svg
+[npm-url]: https://npmjs.org/package/dstructs-to-array
 
 [travis-image]: http://img.shields.io/travis/dstructs/to-array/master.svg
 [travis-url]: https://travis-ci.org/dstructs/to-array
