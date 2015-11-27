@@ -3,13 +3,8 @@
 
 // MODULES //
 
-var // Expectation library:
-	chai = require( 'chai' ),
-
-	// Matrix data structure:
+var chai = require( 'chai' ),
 	matrix = require( 'dstructs-matrix' ),
-
-	// Module to be tested:
 	toArray = require( './../lib/matrix.js' );
 
 
@@ -21,7 +16,7 @@ var expect = chai.expect,
 
 // TESTS //
 
-describe( 'compute-to-array', function tests() {
+describe( 'dstructs-to-array', function tests() {
 
 	it( 'should export a function', function test() {
 		expect( toArray ).to.be.a( 'function' );
